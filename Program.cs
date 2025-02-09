@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using TodoApi;
+  // "ToDoDB": "server=localhost;user=root;password=1234;database=ToDoDB",
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
