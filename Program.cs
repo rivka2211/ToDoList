@@ -27,15 +27,15 @@ app.UseSwaggerUI();
 app.UseCors();
 
 //check if needed
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "ToDo API");
-        c.RoutePrefix = string.Empty;
-    });
-}
+// if (app.Environment.IsDevelopment())
+// {
+//     app.UseSwagger();
+//     app.UseSwaggerUI(c =>
+//     {
+//         c.SwaggerEndpoint("/swagger/v1/swagger.json", "ToDo API");
+//         c.RoutePrefix = string.Empty;
+//     });
+// }
 
 app.MapGet("/", () => "Hello World!");
 
