@@ -24,19 +24,14 @@ builder.Services.AddDbContext<ToDoDbContext>(options =>
     ));
 var app = builder.Build();
 app.UseSwagger();
-app.UseSwaggerUI();
+// app.UseSwaggerUI();
 app.UseCors();
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "ToDo API V1");
+    c.RoutePrefix = "swagger"; // אם אתה רוצה שה-Swagger UI יופיע ב-root (כלומר בכתובת הראשית)
+});
 
-//check if needed
-// if (app.Environment.IsDevelopment())
-// {
-//     app.UseSwagger();
-//     app.UseSwaggerUI(c =>
-//     {
-//         c.SwaggerEndpoint("/swagger/v1/swagger.json", "ToDo API");
-//         c.RoutePrefix = string.Empty;
-//     });
-// }
 
 app.MapGet("/", () => "Hello World!");
 
